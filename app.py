@@ -2,7 +2,6 @@ from PySide2.QtWidgets import QApplication
 from PySide2.QtCore import QTranslator, QSettings, QLocale, QLibraryInfo, QCoreApplication, QObject
 import sys
 
-from controllers.main_window import TextEditWindow
 from controllers.controllers_index import IndexWindow
 
 
@@ -37,5 +36,4 @@ class Main():
 
 
 if __name__=="__main__":
-    
     Main().execute()

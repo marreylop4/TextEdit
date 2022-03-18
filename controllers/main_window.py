@@ -202,16 +202,16 @@ class TextEditWindow(QMainWindow, TextEdit):
 
         data = file.readAll()
         file_info= QFileInfo(file)
-        self.set_current_file_format( file_info.suffix())
-        db = QMimeDatabase()
-        mime_type_name = db.mimeTypeForFileNameAndData(f, data).name()
+        #db = QMimeDatabase()
+        #mime_type_name = db.mimeTypeForFileNameAndData(f, data).name()
         text = data.data().decode('utf8')
-        if mime_type_name == "text/markdown":
-            self._text_edit.setMarkdown(text)
-        else:
-            self._text_edit.setPlainText(text)
+        #if mime_type_name == "text/markdown":
+        #    self._text_edit.setPlainText(text)
+        #else:
+        self._text_edit.setPlainText(text)
 
         self.set_current_file_name(f)
+        self.set_current_file_format( file_info.suffix())
         return True
 
     def maybe_save(self):
@@ -295,7 +295,7 @@ class TextEditWindow(QMainWindow, TextEdit):
         fn = file_dialog.selectedFiles()[0]
         native_fn = QDir.toNativeSeparators(fn)
         if self.load_file(fn):
-            self.statusBar().showMessage('Opened "{native_fn}"')
+            self.statusBar().showMessage(f'Opened "{native_fn}"')
         else:
             self.statusBar().showMessage(f'Could not open "{native_fn}"')
 

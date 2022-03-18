@@ -18,7 +18,7 @@ class IndexWindow(QWidget, Index):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle(QCoreApplication.applicationName())#el titulo de la app
+        self.setWindowTitle(QCoreApplication.applicationName())
         self.newFile.clicked.connect(self.file_new)
         self.openFile.clicked.connect(self.file_open)
         self.Information.clicked.connect(self.about)
@@ -51,19 +51,19 @@ class IndexWindow(QWidget, Index):
         data = file.readAll()
         file_info= QFileInfo(file)
         window.set_current_file_format( file_info.suffix())
-        db = QMimeDatabase()
-        mime_type_name = db.mimeTypeForFileNameAndData(fn, data).name()
+        #db = QMimeDatabase()
+        #mime_type_name = db.mimeTypeForFileNameAndData(fn, data).name()
         text = data.data().decode('utf8')
-        if mime_type_name == "text/markdown":
-            window._text_edit.setMarkdown(text)
-        else:
-            window._text_edit.setPlainText(text)
+        #if mime_type_name == "text/markdown":
+        #    window._text_edit.setPlainText(text)
+        #else:
+        window._text_edit.setPlainText(text)
 
         window.set_current_file_name(fn)
         load = True
     
         if load:
-            window.statusBar().showMessage('Opened "{native_fn}"')
+            window.statusBar().showMessage(f'Opened "{native_fn}"')
         else:
             window.statusBar().showMessage(f'Could not open "{native_fn}"')
         window.show()
@@ -88,5 +88,5 @@ class IndexWindow(QWidget, Index):
         QMessageBox.about(self, "About", """""".join(["""<p>This is a markdown text editor with preview. The
                      uploaded or created files can be saved in different formats 
                      such as HTML. If you want to know more about markdown here is a link about it:</p>
-                     <a href =https://www.markdownguide.org/basic-syntax/#html>Markdown Guide</a> """])
+                     <a href = https://www.markdownguide.org/basic-syntax/#html>Markdown Guide</a> """])
 )
