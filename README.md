@@ -9,5 +9,5 @@
 * Para poder ejecutar la aplicación debe tener instalado Python 3.1.0 y abrir la consola de comando dentro del repositorio y ejecutar "pip install -r requirements.txt" y "python app.py"
 
 **Ejecutable**
-* https://uses0-my.sharepoint.com/:f:/g/personal/marreylop4_alum_us_es/Eo-b12Tr2KVFh_zlg7e_QS4BnhvjwmTD2kPj7qdAbuUJQw?e=l5HHBl
+* https://uses0-my.sharepoint.com/:f:/g/personal/marreylop4_alum_us_es/Eo_3loywRW5MlNU8y2EqpyIBLZZai3GrO-MYY2KQs4ECdg?e=phR0eP
 * En ese enlace puede acceder a la carpeta donde puede encontrar el TextEdit.exe para arrancar la aplicación sin necesidad de instalar nada.
